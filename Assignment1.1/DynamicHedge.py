@@ -4,11 +4,14 @@ Description:
 Author:      YANG YIFAN
 Created:     2023
 """
+# %%
 import numpy as np
 import math
 import BlackScholes as bs
 import Utilities
-
+# %%
+a = bs.BlackScholes(100,100,0.2,0.05,1,True)
+# %%
 def test_bs(s, k, implied_vol, r, maturity, is_call, position):
     bs_model = bs.BlackScholes(s, k, implied_vol, r, maturity, is_call)
     price = position * bs_model.price()

@@ -1,14 +1,15 @@
-"""
-Name:   BlackScholes Class
-Description:
-Author:      YANG YIFAN
-Created:     2023
-"""
-import numpy as np
-import math
-from scipy.stats import norm
+# """
+# Name:   BlackScholes Class
+# Description:
+# Author:      YANG YIFAN
+# Created:     2023
+# """
 
-class BlackScholes(object):
+# import math
+import numpy as np
+# from scipy.stats import norm
+
+class BlackScholes:
     '''
     interest rate curve class
     Attributes
@@ -50,4 +51,8 @@ class BlackScholes(object):
             raise ValueError('maturity must be greater 0')
         self.maturity = maturity
         self.is_call = is_call
+    def d1(self):
+        return (np.log(self.s/self.k)+(self.r+0.5*self.vol**2)*self.maturity)/(self.vol*np.sqrt(self.maturity))
 
+    def d2(self):
+        return (np.log(self.s/self.k)+(self.r-0.5*self.vol**2)*self.maturity)/(self.vol*np.sqrt(self.maturity))

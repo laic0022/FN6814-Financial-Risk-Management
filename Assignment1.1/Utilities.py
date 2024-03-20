@@ -7,7 +7,6 @@ Created:     2023
 import BlackScholes as bs
 import numpy as np
 import math
-import pandas as pd
 
 def simuale_share_prices(share_prices, simu_dates, num_path, s0, r, simu_vol):
     '''
