@@ -1,0 +1,64 @@
+Curve:USD.OIS,,,,,,,,,,
+Instruement,Type,Start Tenor,Tenor,Market Quote,Leg1 Freq,Leg2 Freq,DiscountCurve,ForwardCurve,Leg2 DiscountCurve,Leg2 ForwardCurve
+fedfund future,fedfund future,Spot,1M,98.1513,na,na,USD.OIS,USD.OIS,na,na
+fedfund future,fedfund future,1M,1M,98.2525,na,na,USD.OIS,USD.OIS,na,na
+fedfund future,fedfund future,2M,1M,98.32,na,na,USD.OIS,USD.OIS,na,na
+fedfund future,fedfund future,3M,1M,98.4075,na,na,USD.OIS,USD.OIS,na,na
+fedfund future,fedfund future,4M,1M,98.48,na,na,USD.OIS,USD.OIS,na,na
+fedfund future,fedfund future,5M,1M,98.5025,na,na,USD.OIS,USD.OIS,na,na
+fedfund future,fedfund future,6M,1M,98.5475,na,na,USD.OIS,USD.OIS,na,na
+fedfund future,fedfund future,7M,1M,98.585,na,na,USD.OIS,USD.OIS,na,na
+fedfund future,fedfund future,8M,1M,98.61,na,na,USD.OIS,USD.OIS,na,na
+fedfund future,fedfund future,9M,1M,98.6375,na,na,USD.OIS,USD.OIS,na,na
+fedfund future,fedfund future,10M,1M,98.6675,na,na,USD.OIS,USD.OIS,na,na
+OIS Basis Swap,basis swap,Spot,1Y,0.003,3M,3M,USD.OIS,USD.OIS,USD.OISD,USD.LIBOR.3M
+OIS Basis Swap,basis swap,Spot,2Y,0.0026,3M,3M,USD.OIS,USD.OIS,USD.OISD,USD.LIBOR.3M
+OIS Basis Swap,basis swap,Spot,3Y,0.0025,3M,3M,USD.OIS,USD.OIS,USD.OISD,USD.LIBOR.3M
+OIS Basis Swap,basis swap,Spot,4Y,0.0024,3M,3M,USD.OIS,USD.OIS,USD.OISD,USD.LIBOR.3M
+OIS Basis Swap,basis swap,Spot,5Y,0.0024,3M,3M,USD.OIS,USD.OIS,USD.OISD,USD.LIBOR.3M
+OIS Basis Swap,basis swap,Spot,6Y,0.0024,3M,3M,USD.OIS,USD.OIS,USD.OISD,USD.LIBOR.3M
+OIS Basis Swap,basis swap,Spot,7Y,0.0023,3M,3M,USD.OIS,USD.OIS,USD.OISD,USD.LIBOR.3M
+OIS Basis Swap,basis swap,Spot,8Y,0.0023,3M,3M,USD.OIS,USD.OIS,USD.OISD,USD.LIBOR.3M
+OIS Basis Swap,basis swap,Spot,10Y,0.0023,3M,3M,USD.OIS,USD.OIS,USD.OISD,USD.LIBOR.3M
+OIS Basis Swap,basis swap,Spot,12Y,0.0023,3M,3M,USD.OIS,USD.OIS,USD.OISD,USD.LIBOR.3M
+OIS Basis Swap,basis swap,Spot,15Y,0.0022,3M,3M,USD.OIS,USD.OIS,USD.OISD,USD.LIBOR.3M
+OIS Basis Swap,basis swap,Spot,20Y,0.0022,3M,3M,USD.OIS,USD.OIS,USD.OISD,USD.LIBOR.3M
+OIS Basis Swap,basis swap,Spot,25Y,0.0022,3M,3M,USD.OIS,USD.OIS,USD.OISD,USD.LIBOR.3M
+OIS Basis Swap,basis swap,Spot,30Y,0.0022,3M,3M,USD.OIS,USD.OIS,USD.OISD,USD.LIBOR.3M
+Curve:USD.LIBOR.3M,,,,,,,,,,
+Instruement,Type,Start Tenor,Tenor,Market Quote,Leg1 Freq,Leg2 Freq,DiscountCurve,ForwardCurve,Leg2 DiscountCurve,Leg2 ForwardCurve
+Eurodollar future,future,0M,3M,98.0175,na,na,USD.OIS,USD.LIBOR.3M,na,na
+Eurodollar future,future,3M,3M,98.3075,na,na,USD.OIS,USD.LIBOR.3M,na,na
+Eurodollar future,future,6M,3M,98.42,na,na,USD.OIS,USD.LIBOR.3M,na,na
+Eurodollar future,future,9M,3M,98.4975,na,na,USD.OIS,USD.LIBOR.3M,na,na
+Eurodollar future,future,12M,3M,98.4975,na,na,USD.OIS,USD.LIBOR.3M,na,na
+Eurodollar future,future,15M,3M,98.5775,na,na,USD.OIS,USD.LIBOR.3M,na,na
+Libor3M Swap,swap,Spot,2Y,0.0166,6M,3M,USD.OIS,na,USD.OIS,USD.LIBOR.3M
+Libor3M Swap,swap,Spot,3Y,0.0158,6M,3M,USD.OIS,na,USD.OIS,USD.LIBOR.3M
+Libor3M Swap,swap,Spot,4Y,0.0154,6M,3M,USD.OIS,na,USD.OIS,USD.LIBOR.3M
+Libor3M Swap,swap,Spot,5Y,0.0153,6M,3M,USD.OIS,na,USD.OIS,USD.LIBOR.3M
+Libor3M Swap,swap,Spot,6Y,0.0153,6M,3M,USD.OIS,na,USD.OIS,USD.LIBOR.3M
+Libor3M Swap,swap,Spot,7Y,0.0154,6M,3M,USD.OIS,na,USD.OIS,USD.LIBOR.3M
+Libor3M Swap,swap,Spot,8Y,0.0156,6M,3M,USD.OIS,na,USD.OIS,USD.LIBOR.3M
+Libor3M Swap,swap,Spot,10Y,0.0161,6M,3M,USD.OIS,na,USD.OIS,USD.LIBOR.3M
+Libor3M Swap,swap,Spot,12Y,0.0164,6M,3M,USD.OIS,na,USD.OIS,USD.LIBOR.3M
+Libor3M Swap,swap,Spot,15Y,0.0169,6M,3M,USD.OIS,na,USD.OIS,USD.LIBOR.3M
+Libor3M Swap,swap,Spot,20Y,0.0174,6M,3M,USD.OIS,na,USD.OIS,USD.LIBOR.3M
+Libor3M Swap,swap,Spot,25Y,0.0175,6M,3M,USD.OIS,na,USD.OIS,USD.LIBOR.3M
+Libor3M Swap,swap,Spot,30Y,0.0176,6M,3M,USD.OIS,na,USD.OIS,USD.LIBOR.3M
+Curve:USD.LIBOR.6M,,,,,,,,,,
+Instruement,Type,Start Tenor,Tenor,Market Quote,Leg1 Freq,Leg2 Freq,DiscountCurve,ForwardCurve,Leg2 DiscountCurve,Leg2 ForwardCurve
+Libor3M6M Basis Swap,basis swap,Spot,1Y,0.0006,3M,6M,USD.OIS,USD.LIBOR.3M,USD.OIS,USD.LIBOR.6M
+Libor3M6M Basis Swap,basis swap,Spot,2Y,0.0006,3M,6M,USD.OIS,USD.LIBOR.3M,USD.OIS,USD.LIBOR.6M
+Libor3M6M Basis Swap,basis swap,Spot,3Y,0.0006,3M,6M,USD.OIS,USD.LIBOR.3M,USD.OIS,USD.LIBOR.6M
+Libor3M6M Basis Swap,basis swap,Spot,4Y,0.0007,3M,6M,USD.OIS,USD.LIBOR.3M,USD.OIS,USD.LIBOR.6M
+Libor3M6M Basis Swap,basis swap,Spot,5Y,0.0007,3M,6M,USD.OIS,USD.LIBOR.3M,USD.OIS,USD.LIBOR.6M
+Libor3M6M Basis Swap,basis swap,Spot,6Y,0.0008,3M,6M,USD.OIS,USD.LIBOR.3M,USD.OIS,USD.LIBOR.6M
+Libor3M6M Basis Swap,basis swap,Spot,7Y,0.0008,3M,6M,USD.OIS,USD.LIBOR.3M,USD.OIS,USD.LIBOR.6M
+Libor3M6M Basis Swap,basis swap,Spot,8Y,0.0009,3M,6M,USD.OIS,USD.LIBOR.3M,USD.OIS,USD.LIBOR.6M
+Libor3M6M Basis Swap,basis swap,Spot,10Y,0.0009,3M,6M,USD.OIS,USD.LIBOR.3M,USD.OIS,USD.LIBOR.6M
+Libor3M6M Basis Swap,basis swap,Spot,12Y,0.0009,3M,6M,USD.OIS,USD.LIBOR.3M,USD.OIS,USD.LIBOR.6M
+Libor3M6M Basis Swap,basis swap,Spot,15Y,0.001,3M,6M,USD.OIS,USD.LIBOR.3M,USD.OIS,USD.LIBOR.6M
+Libor3M6M Basis Swap,basis swap,Spot,20Y,0.001,3M,6M,USD.OIS,USD.LIBOR.3M,USD.OIS,USD.LIBOR.6M
+Libor3M6M Basis Swap,basis swap,Spot,25Y,0.001,3M,6M,USD.OIS,USD.LIBOR.3M,USD.OIS,USD.LIBOR.6M
+Libor3M6M Basis Swap,basis swap,Spot,30Y,0.001,3M,6M,USD.OIS,USD.LIBOR.3M,USD.OIS,USD.LIBOR.6M
