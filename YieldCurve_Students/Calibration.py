@@ -247,6 +247,22 @@ def calibration_object_function(yvalues, curve_constructor):
     curve_constructor.update_curve_yvectors(yvalues)
     return curve_constructor.compute_target() - curve_constructor.targets
 
+def save_calibration_results(curve_constructor, output_file_pathname):
+    f = open(output_file_pathname, "w+")
+    f.close()
+    keys = curve_constructor.curves_to_calibrate.keys()
+    # curves_dfs = {}
+    for key in keys:
+        curves_df = curve_constructor.curves_info_dict[key]
+        curves_df['maturity year frac'] = [i.get_maturity() for i in curve_constructor.curve_instruments_dict[key]]
+        curves_df['zero rate'] = curve_constructor.curves_to_calibrate[key].interp(curves_df['maturity year frac'])
+        curves_df['recomputed curve targets'] = [i.compute_target_rate() for i in curve_constructor.curve_instruments_dict[key]]
+        # curves_dfs[key] = curves_df
+        with open(output_file_pathname,'a') as f:
+            f.write(f"Curve:{key}")
+            f.write("\n")
+        f.close()
+        curves_df.to_csv(output_file_pathname, mode = 'a', index = False)
 def calibrate_curves(val_date, input_file_pathname, output_file_pathname,
                      curves_to_calibrate, input_curve_names, input_curve_result_pathname = ''):
 
@@ -268,17 +284,16 @@ def calibrate_curves(val_date, input_file_pathname, output_file_pathname,
 
     # # save result back to csv file
     curve_constructor.update_curve_yvectors(y_calibration)
-    # save_calibration_results(curve_constructor, output_file_pathname)
+    save_calibration_results(curve_constructor, output_file_pathname)
 
 if __name__ == '__main__':
     val_date = dt.datetime(year=2020, month=1, day=2)
 
     ## calib set 1, USD OIS, USD LIBOR.3M
     # step 1, input
-    # input_file_pathname = r'C:\Yifan\Teaching\Project\YieldCurve_Students\USD_calibration.csv'
-    # output_file_pathname = r'C:\Yifan\Teaching\Project\YieldCurve_Students\USDOISLIBOR3M_result.csv'
     input_file_pathname = 'USD_calibration.csv'
     output_file_pathname = 'USDOISLIBOR3M_result.csv'
+
     # step 2 this is to tell which curves we want to calibrate, could be multiple curves
     curves_to_calibrate = {'USD.OIS': pd.DataFrame(),
                            'USD.LIBOR.3M': pd.DataFrame()}
@@ -286,15 +301,49 @@ if __name__ == '__main__':
     # step 3 this is to tell parent curve information, e.g., USD.LIBOR.6M is dependent on USD.OIS and USD.LIBOR.3M
     input_curve_names = []
     input_curve_result_pathname =''
-
+    
+    calibrate_curves(val_date, input_file_pathname, output_file_pathname,
+                     curves_to_calibrate, input_curve_names, input_curve_result_pathname)
     ## calib set 2, USD.LIBOR.6M
-    # input_file_pathname = r'C:\Yifan\Teaching\Project\YieldCurve_Students\USD_calibration.csv'
-    # output_file_pathname = r'C:\Yifan\Teaching\Project\YieldCurve_Students\USDLIBOR6M_result.csv'
-    # curves_to_calibrate = {'USD.LIBOR.6M': pd.DataFrame()}
-    # input_curve_names = ['USD.OIS', 'USD.LIBOR.3M']
-    # input_curve_result_pathname = r'C:\Yifan\Teaching\Project\YieldCurve\USDOISLIBOR3M_result.csv'
+    input_file_pathname = 'USD_calibration.csv'
+    output_file_pathname = 'USDLIBOR6M_result.csv'
+    curves_to_calibrate = {'USD.LIBOR.6M': pd.DataFrame()}
+    input_curve_names = ['USD.OIS', 'USD.LIBOR.3M']
+    input_curve_result_pathname = 'USDOISLIBOR3M_result.csv'
 
     calibrate_curves(val_date, input_file_pathname, output_file_pathname,
                      curves_to_calibrate, input_curve_names, input_curve_result_pathname)
 
+# %%
+    ## calib set 1, USD OIS, USD LIBOR.3M
+    # step 1, input
+    input_file_pathname = 'JPY_calibration.csv'
+    output_file_pathname = 'JPYTONARLIBOR3M_result.csv'
+
+    # step 2 this is to tell which curves we want to calibrate, could be multiple curves
+    curves_to_calibrate = {'JPY.TONAR': pd.DataFrame(),
+                           'JPY.LIBOR.3M': pd.DataFrame(),
+                           'JPY.LIBOR.6M': pd.DataFrame()}
+
+    # step 3 this is to tell parent curve information, e.g., USD.LIBOR.6M is dependent on USD.OIS and USD.LIBOR.3M
+    input_curve_names = []
+    input_curve_result_pathname =''
+
+    calibrate_curves(val_date, input_file_pathname, output_file_pathname,
+                     curves_to_calibrate, input_curve_names, input_curve_result_pathname)
+# %%
+    ## calib set 1, USD OIS, USD LIBOR.3M
+    # step 1, input
+    input_file_pathname = 'JPY_calibration.csv'
+    output_file_pathname = 'JPYTONARLIBOR6M_result.csv'
+
+    # step 2 this is to tell which curves we want to calibrate, could be multiple curves
+    curves_to_calibrate = {'JPY.LIBOR.6M': pd.DataFrame()}
+
+    # step 3 this is to tell parent curve information, e.g., USD.LIBOR.6M is dependent on USD.OIS and USD.LIBOR.3M
+    input_curve_names = ['JPY.TONAR', 'JPY.LIBOR.3M']
+    input_curve_result_pathname = 'JPYTONARLIBOR3M_result.csv'
+
+    calibrate_curves(val_date, input_file_pathname, output_file_pathname,
+                     curves_to_calibrate, input_curve_names, input_curve_result_pathname)
 # %%
